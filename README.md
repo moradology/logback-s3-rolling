@@ -1,3 +1,3 @@
-# scala sandbox
-A simple environment for testing Scala's behavior
+# A Rolling, S3-uploading, logback-classic extension
+
 

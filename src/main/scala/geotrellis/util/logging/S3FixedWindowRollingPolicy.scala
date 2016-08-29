@@ -14,14 +14,13 @@ import ch.qos.logback.core.rolling.helper.CompressionMode._
 
 
 /**
- * Extension of FixedWindowRollingPolicy.
  * Based on https://github.com/shuwada/logback-s3
  *
  * On each rolling event (which is defined by <triggeringPolicy>), this policy does:
- * 1. Regular log file rolling as FixedWindowsRollingPolicy does
- * 2. Upload the rolled log file to S3 bucket
+ * 1. Incremented log file rolling
+ * 2. Uploading of the rolled log file to an S3 bucket
  *
- * Also, this policy uploads the active log file on JVM exit.
+ * This policy uploads the active log file on JVM exit.
  *
 **/
 class S3FixedWindowRollingPolicy extends FixedWindowRollingPolicy {
