@@ -1,0 +1,25 @@
+<configuration debug="true">
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file></file>
+
+    <encoder>
+      <pattern>%d\t%thread\t%level\t%logger\t%msg%n</pattern>
+    </encoder>
+
+    <rollingPolicy class="ch.qos.logback.core.rolling.S3FixedWindowRollingPolicy">
+      <fileNamePattern>file.%i.gz</fileNamePattern>
+      <awsAccessKey></awsAccessKey>
+      <awsSecretKey></awsSecretKey>
+      <s3BucketName></s3BucketName>
+      <s3FolderName></s3FolderName>
+    </rollingPolicy>
+
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+      <maxFileSize>10MB</maxFileSize>
+    </triggeringPolicy>
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="FILE"/>
+  </root>
+</configuration>
