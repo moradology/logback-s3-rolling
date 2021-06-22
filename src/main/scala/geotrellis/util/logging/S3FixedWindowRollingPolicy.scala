@@ -40,7 +40,7 @@ class S3FixedWindowRollingPolicy extends FixedWindowRollingPolicy {
       val cred: AWSCredentials = new BasicAWSCredentials(getAwsAccessKey(), getAwsSecretKey())
       s3Client = new AmazonS3Client(cred)
     }
-    return s3Client
+    s3Client
   }
 
   override def start: Unit = {
